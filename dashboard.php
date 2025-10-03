@@ -1,16 +1,8 @@
 <?php
 session_start();
 
-// DB connection (same as login file)
-$servername = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "careerguidance";
+include 'db_connection.php';
 
-$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname, 3307);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 // Check login state
 $isLoggedIn = isset($_SESSION['fullName']);

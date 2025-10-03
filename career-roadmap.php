@@ -1,16 +1,7 @@
 <?php
 session_start();
 
-// DB connection (adjust as needed)
-$servername = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "careerguidance";
-
-$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname, 3307);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db_connection.php';
 
 // Get career_id from GET, validate
 if (!isset($_GET['career_id']) || !is_numeric($_GET['career_id'])) {

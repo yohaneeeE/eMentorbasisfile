@@ -1,14 +1,7 @@
 <?php
 session_start();
-$servername = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "careerguidance";
-$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname, 3307);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['loginEmail'])) {
     $email = trim($_POST['loginEmail']);
